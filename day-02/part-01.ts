@@ -11,11 +11,7 @@ const lines = fs
   .readFileSync(path.join(__dirname, "input.txt"), "utf-8")
   .split("\n");
 
-let total = 0;
-
-lines.forEach((_, idx) => {
-  total += idx + 1;
-});
+const total = (lines.length * (lines.length + 1)) / 2;
 
 const invalidGames = new Set<number>();
 
