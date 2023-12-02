@@ -16,10 +16,9 @@ const total = (lines.length * (lines.length + 1)) / 2;
 const invalidGames = new Set<number>();
 
 lines
-  .map((line) => line.replace(/^.*: /, ""))
-  .map((line) => line.split(";"))
+  .map((line) => line.replace(/^.*: /, "").split(";"))
   .map((line, idx) =>
-    line.map((item) =>
+    line.forEach((item) =>
       item.split(",").map((item) => {
         const [value, colour] = item.trim().split(" ");
         if (parseInt(value, 10) > maximums[colour]) {

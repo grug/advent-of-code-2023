@@ -8,14 +8,13 @@ const lines = fs
 let powers: number[] = [];
 
 lines
-  .map((line) => line.replace(/^.*: /, ""))
-  .map((line) => line.split(";"))
+  .map((line) => line.replace(/^.*: /, "").split(";"))
   .map((line) => {
     let maxRed = -Infinity;
     let maxGreen = -Infinity;
     let maxBlue = -Infinity;
 
-    line.map((item) => {
+    line.forEach((item) => {
       item.split(",").map((item) => {
         const [value, colour] = item.trim().split(" ");
         switch (colour) {
