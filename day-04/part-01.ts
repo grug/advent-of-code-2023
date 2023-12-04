@@ -16,11 +16,7 @@ const answer = fs
 
     return intersection.size === 0
       ? acc
-      : acc +
-          Math.pow(
-            2,
-            new Set([...ticket].filter((i) => winners.has(i))).size - 1
-          );
+      : acc + Math.pow(2, intersection.size - 1);
   }, 0);
 
 console.log(answer);
